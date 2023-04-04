@@ -112,7 +112,7 @@ class Root extends Component {
       </div>
       <div className="flex items-center justify-between">
         <a
-          href="https://github.com/kianush00/Microfrontends-react/"
+          href="https://github.com/kianush00/Microfrontends_react_v2/"
           className="externalLink"
         >
           Github project
