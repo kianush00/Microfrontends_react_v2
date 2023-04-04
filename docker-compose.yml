@@ -1,0 +1,50 @@
+version: '3.0'
+services:
+  host-app:
+    build:
+      context: ./host_app
+    ports:
+      - "9000:9000"
+    container_name: host-app-gestor
+    stdin_open: true
+    tty: true
+  planets:
+      build:
+        context: ./planets
+      ports:
+        - "9001:80"
+      container_name: planets-gestor
+      stdin_open: true
+      tty: true
+  navbar:
+    build:
+      context: ./navbar
+    ports:
+      - "9002:80"
+    container_name: navbar-gestor
+    stdin_open: true
+    tty: true
+  styleguide:
+    build:
+      context: './styleguide'
+    ports:
+      - "9003:80"
+    container_name: styleguide-gestor
+    stdin_open: true
+    tty: true
+  people:
+    build:
+      context: './people'
+    ports:
+      - "9004:80"
+    container_name: people-gestor
+    stdin_open: true
+    tty: true
+  api:
+    build:
+      context: './api'
+    ports:
+      - "9005:80"
+    container_name: api-gestor
+    stdin_open: true
+    tty: true
