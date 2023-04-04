@@ -4,44 +4,13 @@
 
 Tutorial video: [youtube](https://www.youtube.com/watch?v=vjjcuIxqIzY&list=PLLUD8RtHvsAOhtHnyGx57EYXoaNsxGrTU&index=4) / [bilibili](https://www.bilibili.com/video/av83617789/)
 
-1. En directorio root:
+1. En directorio principal:
+
 ```sh
-yarn install
-yarn start --port 9000
+docker compose up --build
 ```
 
-2. En directorio planets:
-```sh
-export NODE_OPTIONS=--openssl-legacy-provider
-yarn install
-yarn start --port 9001
-```
-
-3. En directorio navbar:
-```sh
-yarn install
-yarn start --port 9002
-```
-
-4. En directorio styleguide:
-```sh
-yarn install
-yarn start --port 9003
-```
-
-5. En directorio people:
-```sh
-yarn install
-yarn start --port 9004
-```
-
-6. En directorio api:
-```sh
-yarn install
-yarn start --port 9005
-```
-
-7. Abrir http://localhost:9000
+2. Abrir http://localhost:9000
 
 # React root-config
 
