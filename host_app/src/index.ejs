@@ -27,7 +27,8 @@
         "@react-mf/visualizador-calidad-aire": "//localhost:9006/react-mf-visualizador-calidad-aire.js",
         "@react-mf/visualizador-restriccion": "//localhost:9007/react-mf-visualizador-restriccion.js",
         "@react-mf/turismo": "//localhost:9008/react-mf-turismo.js",
-        "@react-mf/ambientes-cerrados": "//localhost:9009/react-mf-ambientes-cerrados.js"
+        "@react-mf/ambientes-cerrados": "//localhost:9009/react-mf-ambientes-cerrados.js",
+        "@react-mf/ambientes-abiertos": "//localhost:9010/react-mf-ambientes-abiertos.js"
       }
     }
   </script>
@@ -51,6 +52,9 @@
         </route>
         <route path="ambientes_cerrados">
           <application name="@react-mf/ambientes-cerrados"></application>
+        </route>
+        <route path="ambientes_abiertos">
+          <application name="@react-mf/ambientes-abiertos"></application>
         </route>
         <route default>
           <h1 class="flex flex-row justify-center p-16">
