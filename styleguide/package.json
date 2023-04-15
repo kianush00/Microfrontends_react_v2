@@ -13,11 +13,6 @@
     "watch-tests": "jest --watch",
     "coverage": "jest --coverage"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && concurrently pnpm:test pnpm:lint"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",

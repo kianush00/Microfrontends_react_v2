@@ -22,11 +22,9 @@
     {
       "imports": {
         "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
-        "@react-mf/planets": "//localhost:9001/react-mf-planets.js",
         "@react-mf/navbar": "//localhost:9002/react-mf-navbar.js",
         "@react-mf/styleguide": "//localhost:9003/react-mf-styleguide.js",
-        "@react-mf/people": "//localhost:9004/react-mf-people.js",
-        "@react-mf/api": "//localhost:9005/react-mf-api.js"
+        "@react-mf/visualizador-calidad-aire": "//localhost:9006/react-mf-visualizador-calidad-aire.js"
       }
     }
   </script>
@@ -39,13 +37,9 @@
         <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
       </nav>
       <div class="main-content mt-16">
-        <route path="people">
-          <application name="@react-mf/people"></application>
+        <route path="visualizador_calidad_aire">
+          <application name="@react-mf/visualizador-calidad-aire"></application>
         </route>
-        <route path="planets">
-          <application name="@react-mf/planets"></application>
-        </route>
-        <redirect from="/earth" to="/planets"></redirect>
         <route default>
           <h1 class="flex flex-row justify-center p-16">
             <p class="max-w-md">This example project shows independently built and deployed microfrontends that use React and single-spa. Each nav link above takes you to a different microfrontend.</p>
