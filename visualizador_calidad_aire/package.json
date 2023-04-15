@@ -1,7 +1,7 @@
 {
   "name": "@react-mf/visualizador-calidad-aire",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --port 9006 --env isLocal",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
