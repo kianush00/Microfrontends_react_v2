@@ -8,14 +8,6 @@ services:
     container_name: host-app-gestor
     stdin_open: true
     tty: true
-  planets:
-      build:
-        context: ./planets
-      ports:
-        - "9001:80"
-      container_name: planets-gestor
-      stdin_open: true
-      tty: true
   navbar:
     build:
       context: ./navbar
@@ -32,19 +24,83 @@ services:
     container_name: styleguide-gestor
     stdin_open: true
     tty: true
-  people:
+  visualizador-calidad-aire:
     build:
-      context: './people'
+      context: './visualizador_calidad_aire'
     ports:
-      - "9004:80"
-    container_name: people-gestor
+      - "9006:80"
+    container_name: visualizador-calidad-aire-gestor
     stdin_open: true
     tty: true
-  api:
+  visualizador-restriccion:
     build:
-      context: './api'
+      context: './visualizador_restriccion'
     ports:
-      - "9005:80"
-    container_name: api-gestor
+      - "9007:80"
+    container_name: visualizador-restriccion-gestor
+    stdin_open: true
+    tty: true
+  turismo:
+    build:
+      context: './turismo'
+    ports:
+      - "9008:80"
+    container_name: turismo-gestor
+    stdin_open: true
+    tty: true
+  ambientes-cerrados:
+    build:
+      context: './ambientes_cerrados'
+    ports:
+      - "9009:80"
+    container_name: ambientes-cerrados-gestor
+    stdin_open: true
+    tty: true
+  ambientes-abiertos:
+    build:
+      context: './ambientes_abiertos'
+    ports:
+      - "9010:80"
+    container_name: ambientes-abiertos-gestor
+    stdin_open: true
+    tty: true
+  deportes:
+    build:
+      context: './deportes'
+    ports:
+      - "9011:80"
+    container_name: deportes-gestor
+    stdin_open: true
+    tty: true
+  entretenimiento:
+    build:
+      context: './entretenimiento'
+    ports:
+      - "9012:80"
+    container_name: entretenimiento-gestor
+    stdin_open: true
+    tty: true
+  entretenimiento-familiar:
+    build:
+      context: './entretenimiento_familiar'
+    ports:
+      - "9013:80"
+    container_name: entretenimiento-familiar-gestor
+    stdin_open: true
+    tty: true
+  entretenimiento-tercera-edad:
+    build:
+      context: './entretenimiento_tercera_edad'
+    ports:
+      - "9014:80"
+    container_name: entretenimiento-tercera-edad-gestor
+    stdin_open: true
+    tty: true
+  entretenimiento-adulto:
+    build:
+      context: './entretenimiento_adulto'
+    ports:
+      - "9015:80"
+    container_name: entretenimiento-adulto-gestor
     stdin_open: true
     tty: true
