@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>React Microfrontends</title>
+  <title>Gestor Aire Temuco</title>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
   <script type="systemjs-importmap">
@@ -32,7 +32,8 @@
         "@react-mf/deportes": "//localhost:9011/react-mf-deportes.js",
         "@react-mf/entretenimiento": "//localhost:9012/react-mf-entretenimiento.js",
         "@react-mf/entretenimiento-familiar": "//localhost:9013/react-mf-entretenimiento-familiar.js",
-        "@react-mf/entretenimiento-tercera-edad": "//localhost:9014/react-mf-entretenimiento-tercera-edad.js"
+        "@react-mf/entretenimiento-tercera-edad": "//localhost:9014/react-mf-entretenimiento-tercera-edad.js",
+        "@react-mf/entretenimiento-adulto": "//localhost:9015/react-mf-entretenimiento-adulto.js"
       }
     }
   </script>
@@ -72,9 +73,12 @@
         <route path="entretenimiento_tercera_edad">
           <application name="@react-mf/entretenimiento-tercera-edad"></application>
         </route>
+        <route path="entretenimiento_adulto">
+          <application name="@react-mf/entretenimiento-adulto"></application>
+        </route>
         <route default>
           <h1 class="flex flex-row justify-center p-16">
-            <p class="max-w-md">This example project shows independently built and deployed microfrontends that use React and single-spa. Each nav link above takes you to a different microfrontend.</p>
+            <p class="max-w-md">Gestor Aire Temuco.</p>
           </h1>
         </route>
       </div>
