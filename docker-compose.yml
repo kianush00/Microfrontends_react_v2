@@ -4,7 +4,7 @@ services:
     build:
       context: ./host_app
     ports:
-      - "9000:9000"
+      - "80:80"
     container_name: host_app_gestor
     stdin_open: true
     tty: true

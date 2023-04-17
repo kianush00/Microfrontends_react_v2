@@ -24,7 +24,7 @@ class Root extends Component {
 
   fetchLinks() {
     //volver al último estado
-    fetch("http://localhost:8000/actual_state")
+    fetch("http://oasis.ceisufro.cl:10000/actual_state")
       .then(function (response) {
         if (response.ok) {
           console.log("obtener estado 200 OK");
@@ -42,7 +42,7 @@ class Root extends Component {
       });
 
     //obtener links de estado actual
-    fetch("http://localhost:8000/links")
+    fetch("http://oasis.ceisufro.cl:10000/links")
       .then(function (response) {
         if (response.ok) {
           console.log("obtener links 200 OK");
@@ -62,8 +62,8 @@ class Root extends Component {
 
     setInterval(() => {
       //cambiar estado
-      console.log("actual esatado: " + this.state.actual);
-      fetch("http://localhost:8000/change_state/" + this.state.actual)
+      console.log("actual estado: " + this.state.actual);
+      fetch("http://oasis.ceisufro.cl:10000/change_state/" + this.state.actual)
         .then(function (response) {
           if (response.ok) {
             console.log("cambiar estado 200 OK");
@@ -83,7 +83,7 @@ class Root extends Component {
         });
 
       //obtener links de estado actual
-      fetch("http://localhost:8000/links")
+      fetch("http://oasis.ceisufro.cl:10000/links")
         .then(function (response) {
           if (response.ok) {
             console.log("obtener links 200 OK");

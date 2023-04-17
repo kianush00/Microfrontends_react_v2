@@ -14,7 +14,7 @@ RUN npm install
 # add app
 COPY . ./
 
-EXPOSE 9000
+EXPOSE 80
 
 RUN npm install webpack --save-dev
 
