@@ -30,6 +30,6 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the builder
 COPY --from=builder /app/dist /usr/share/nginx/html/
 
-EXPOSE 9012 80
+EXPOSE 9017 80
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
