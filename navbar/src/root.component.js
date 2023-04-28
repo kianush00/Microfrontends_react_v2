@@ -1,4 +1,3 @@
-//import { links } from "./root.helper.js";
 import { Link } from "@reach/router";
 import React, { Component } from "react";
 
@@ -8,12 +7,13 @@ class Root extends Component {
 
     this.state = {
       links: [],
-      actual: "gestor_aire_temuco",
+      host_app_name: "gestor_aire",
+      url: "http://oasis.ceisufro.cl"
     };
   }
 
   componentDidMount() {
-    this.fetchLinks();
+    this.fetchLinks(this.state.host_app_name);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -22,27 +22,9 @@ class Root extends Component {
     }
   }
 
-  fetchLinks() {
-    //volver al último estado
-    fetch("http://oasis.ceisufro.cl:10000/actual_state")
-      .then(function (response) {
-        if (response.ok) {
-          console.log("obtener estado 200 OK");
-          return response.json();
-        } else {
-          console.log("Respuesta de red OK pero respuesta HTTP no OK");
-        }
-      })
-      .then((data) => {
-        console.log(data);
-        this.setState({ actual: data.actual_state });
-      })
-      .catch(function (error) {
-        console.log("Hubo un problema con la petición Fetch:" + error.message);
-      });
-
-    //obtener links de estado actual
-    fetch("http://oasis.ceisufro.cl:10000/links")
+  fetchLinks(name) {
+    //obtener links de gestor aire (el host app)
+    fetch(this.state.url + "/links?name=" + name)
       .then(function (response) {
         if (response.ok) {
           console.log("obtener links 200 OK");
@@ -52,61 +34,18 @@ class Root extends Component {
         }
       })
       .then((data) => {
+        console.log("datos obtenidos de peticion:");
         console.log(data);
         const links = Array.from(data.links);
         this.setState({ links });
       })
       .catch(function (error) {
-        console.log("Hubo un problema con la petición Fetch:" + error.message);
+        console.log("Hubo un problema con la peticion Fetch:" + error.message);
       });
-
-    setInterval(() => {
-      //cambiar estado
-      console.log("actual estado: " + this.state.actual);
-      fetch("http://oasis.ceisufro.cl:10000/change_state/" + this.state.actual)
-        .then(function (response) {
-          if (response.ok) {
-            console.log("cambiar estado 200 OK");
-            return response.json();
-          } else {
-            console.log("Respuesta de red OK pero respuesta HTTP no OK");
-          }
-        })
-        .then((data) => {
-          console.log(data);
-          this.setState({ actual: data.new_state });
-        })
-        .catch(function (error) {
-          console.log(
-            "Hubo un problema con la petición Fetch:" + error.message
-          );
-        });
-
-      //obtener links de estado actual
-      fetch("http://oasis.ceisufro.cl:10000/links")
-        .then(function (response) {
-          if (response.ok) {
-            console.log("obtener links 200 OK");
-            return response.json();
-          } else {
-            console.log("Respuesta de red OK pero respuesta HTTP no OK");
-          }
-        })
-        .then((data) => {
-          console.log(data);
-          const links = Array.from(data.links);
-          this.setState({ links });
-        })
-        .catch(function (error) {
-          console.log(
-            "Hubo un problema con la petición Fetch:" + error.message
-          );
-        });
-    }, 170);
   }
 
   render() {
-    console.log(this.state.links);
+    console.log("render");
     return (
       <div className="h-16 flex items-center justify-between px-6 bg-primary text-white">
         <div className="flex items-center justify-between">
@@ -117,9 +56,8 @@ class Root extends Component {
                 className="p-6"
                 to={link.href}
                 onClick={() => {
-                  this.setState({
-                    actual: link.href.substr(1, link.href.length - 1),
-                  });
+                  console.log("click en " + link.name)
+                  this.fetchLinks(link.name)
                 }}
               >
                 {link.name}
@@ -128,13 +66,21 @@ class Root extends Component {
           })}
         </div>
         <div className="flex items-center justify-between">
-          <button
-            onClick={() => {
-              this.setState({ actual: "gestor_aire_temuco" });
-            }}
-          >
-            Volver al inicio
-          </button>
+          {[{name: this.state.host_app_name, href: "/" + this.state.host_app_name}].map((link) => {
+            return (
+              <Link
+                key={link.href}
+                className="p-6"
+                to={link.href}
+                onClick={() => {
+                  console.log("click en Volver al inicio")
+                  this.fetchLinks(link.name)
+                }}
+              >
+                Volver al inicio
+              </Link>
+            );
+          })}
         </div>
       </div>
     );

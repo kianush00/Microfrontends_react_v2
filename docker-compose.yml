@@ -26,7 +26,7 @@ services:
     tty: true
   visualizador_calidad_de_aire:
     build:
-      context: './visualizador_calidad_de_aire'
+      context: './visualizador_calidad_aire'
     ports:
       - "9006:80"
     container_name: visualizador_calidad_de_aire
@@ -34,7 +34,7 @@ services:
     tty: true
   visualizador_restriccion_lena:
     build:
-      context: './visualizador_restriccion_lena'
+      context: './visualizador_restriccion'
     ports:
       - "9007:80"
     container_name: visualizador_restriccion_lena

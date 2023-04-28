@@ -46,10 +46,11 @@
         <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
       </nav>
       <div class="main-content mt-16">
-        <route path="visualizador_calidad_aire">
+        <redirect from="/gestor_aire" to="/"></redirect>
+        <route path="visualizador_calidad_de_aire">
           <application name="@react-mf/visualizador-calidad-aire"></application>
         </route>
-        <route path="visualizador_restriccion">
+        <route path="visualizador_restriccion_uso_lena">
           <application name="@react-mf/visualizador-restriccion"></application>
         </route>
         <route path="turismo">
