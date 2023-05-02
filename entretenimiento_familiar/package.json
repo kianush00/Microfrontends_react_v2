@@ -1,7 +1,7 @@
 {
   "name": "@react-mf/entretenimiento-familiar",
   "scripts": {
-    "start": "webpack serve --port 9018 --env isLocal",
+    "start": "webpack serve --port 9013 --env isLocal",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",

@@ -5,7 +5,7 @@ services:
       context: ./host_app
     ports:
       - "80:80"
-    container_name: host_app_gestor
+    container_name: host_app
     stdin_open: true
     tty: true
   navbar:
@@ -13,20 +13,20 @@ services:
       context: ./navbar
     ports:
       - "9002:80"
-    container_name: navbar_gestor
+    container_name: navbar
     stdin_open: true
     tty: true
   styleguide:
     build:
-      context: './styleguide'
+      context: ./styleguide
     ports:
       - "9003:80"
-    container_name: styleguide_gestor
+    container_name: styleguide
     stdin_open: true
     tty: true
   visualizador_calidad_de_aire:
     build:
-      context: './visualizador_calidad_aire'
+      context: ./visualizador_calidad_aire
     ports:
       - "9006:80"
     container_name: visualizador_calidad_de_aire
@@ -34,7 +34,7 @@ services:
     tty: true
   visualizador_restriccion_lena:
     build:
-      context: './visualizador_restriccion'
+      context: ./visualizador_restriccion
     ports:
       - "9007:80"
     container_name: visualizador_restriccion_lena
@@ -42,7 +42,7 @@ services:
     tty: true
   turismo:
     build:
-      context: './turismo'
+      context: ./turismo
     ports:
       - "9008:80"
     container_name: turismo
@@ -50,7 +50,7 @@ services:
     tty: true
   ambientes_cerrados:
     build:
-      context: './ambientes_cerrados'
+      context: ./ambientes_cerrados
     ports:
       - "9009:80"
     container_name: ambientes_cerrados
@@ -58,7 +58,7 @@ services:
     tty: true
   ambientes_abiertos:
     build:
-      context: './ambientes_abiertos'
+      context: ./ambientes_abiertos
     ports:
       - "9010:80"
     container_name: ambientes_abiertos
@@ -66,7 +66,7 @@ services:
     tty: true
   deportes:
     build:
-      context: './deportes'
+      context: ./deportes
     ports:
       - "9011:80"
     container_name: deportes
@@ -74,23 +74,23 @@ services:
     tty: true
   entretenimiento:
     build:
-      context: './entretenimiento'
+      context: ./entretenimiento
     ports:
-      - "9017:80"
+      - "9012:80"
     container_name: entretenimiento
     stdin_open: true
     tty: true
   entretenimiento_familiar:
     build:
-      context: './entretenimiento_familiar'
+      context: ./entretenimiento_familiar
     ports:
-      - "9018:80"
+      - "9013:80"
     container_name: entretenimiento_familiar
     stdin_open: true
     tty: true
   entretenimiento_tercera_edad:
     build:
-      context: './entretenimiento_tercera_edad'
+      context: ./entretenimiento_tercera_edad
     ports:
       - "9014:80"
     container_name: entretenimiento_tercera_edad
@@ -98,7 +98,7 @@ services:
     tty: true
   entretenimiento_adulto:
     build:
-      context: './entretenimiento_adulto'
+      context: ./entretenimiento_adulto
     ports:
       - "9015:80"
     container_name: entretenimiento_adulto
