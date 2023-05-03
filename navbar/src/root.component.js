@@ -8,7 +8,7 @@ class Root extends Component {
     this.state = {
       links: [],
       host_app_name: "gestor_aire",
-      url: "http://oasis.ceisufro.cl"
+      url: "http://oasis.ceisufro.cl:10000"
     };
   }
 
