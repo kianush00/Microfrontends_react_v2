@@ -206,12 +206,12 @@
     System.import('@react-mf/root-config');
     System.import('@react-mf/styleguide');
 
-    const url = "http://oasis.ceisufro.cl:10000"
-    const green_color = "rgb(50, 255, 50)"
-    const red_color = "rgb(255, 50, 50)"
-    const interval_duration = 300
+    const url = "http://oasis.ceisufro.cl:10000";
+    const green_color = "rgb(50, 255, 50)";
+    const red_color = "rgb(255, 50, 50)";
+    const interval_duration = 300;
 
-    console.log("svg update interval duration (millis): " + interval_duration)
+    console.log("svg update interval duration (millis): " + interval_duration);
 
     function periodicFetch(name) {
       fetch(url + "/link?name=" + name)
@@ -223,7 +223,9 @@
         }
       })
       .then((data) => {
-        document.getElementById("rect_" + name).style.fill = (Object.keys(data).length !== 0) ? green_color : red_color;
+        if (document.getElementById("rect_" + name) !== null) {
+          document.getElementById("rect_" + name).style.fill = (Object.keys(data).length !== 0) ? green_color : red_color;
+        }
       })
       .catch(function (error) {
         console.log("host_app Hubo un problema con la peticion Fetch:" + error.message);
@@ -247,4 +249,10 @@
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
+<style>
+  iframe
+{
+    display: none;
+}
+</style>
 </html>
