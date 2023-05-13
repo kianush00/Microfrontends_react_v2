@@ -4,7 +4,7 @@
   "author": "Joel Denning <joeldenning@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --port 9003",
     "build": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
     "lint": "eslint src",
