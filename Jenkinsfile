@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 // Get some code from a GitHub repository
-                sh 'docker compose up --build'
+                sh 'docker compose up --build --detach'
             }
         }
     }
