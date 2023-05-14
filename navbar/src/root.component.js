@@ -7,7 +7,7 @@ class Root extends Component {
   }
 
   state = {
-    links: [],
+    links: [{"name": "", "href": ""}],
     host_app_name: "gestor_aire",
     current_app: "gestor_aire",
     current_interval_id: -1,
